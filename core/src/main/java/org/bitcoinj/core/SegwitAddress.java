@@ -188,7 +188,11 @@ public class SegwitAddress extends Address {
      * @return constructed address
      */
     public static SegwitAddress fromHash(NetworkParameters params, byte[] hash) {
-        return new SegwitAddress(params, 0, hash);
+        return fromHash(params, 0, hash);
+    }
+
+    public static SegwitAddress fromHash(NetworkParameters params, int witnessVersion, byte[] hash) {
+        return new SegwitAddress(params, witnessVersion, hash);
     }
 
     /**
